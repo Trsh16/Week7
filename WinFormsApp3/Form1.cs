@@ -7,49 +7,41 @@ namespace WinFormsApp3
             InitializeComponent();
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            button_Konversi_Click(sender, e);
         }
-     
+
         private void textBox_Kalimat_TextChanged(object sender, EventArgs e)
         {
             label_Hasil.Text = textBox_Kalimat.Text.ToUpper();
             string Kalimat = textBox_Kalimat.Text;
         }
-        
-        private void textBox_Huruf_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_Menjadi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button_Konversi_Click(object sender, EventArgs e)
         {
-            char temp;         
-            char[] character = textBox_Kalimat.Text.ToCharArray();
-            for (int i = 0; i<character.Length-1; i++)
+            String conversion(char[] charSet,
+                            String str)
             {
-                for (int j = 0; j < character.Length - i - 1; j++)
+                int n = str.Length;
+                char[] hashChar = new char[26];
+                for (int i = 0; i < 26; i++)
                 {
-                    if (character[j] > character[j + 1])
-                    {
-                        temp = character[j];
-                        character[j] = character[j + 1];
-                        character[j + 1] = temp;
-                    }
+                    int ch = Math.Abs(charSet[i] - 'a');
+                    hashChar[ch] = (char)('a' + i);
                 }
+               
+                String s = textBox_Menjadi.Text;
+                for (int i = 0; i < n; i++)
+                {
+                    s += hashChar[str[i] - 'a'];
+                }
+                return s;
             }
-            label_Hasil.Text = character.ToString();
-        }
-
-        private void label_Hasil_Click(object sender, EventArgs e)
-        {
+            char[] charSet = "cdefghijklmnopqrstuvwxyzab".ToCharArray();
+            String str = textBox_Kalimat.Text;
+            str = conversion(charSet, str);
+            label_Hasil.Text = str.ToUpper();
         }
     }
 }

@@ -80,7 +80,6 @@
             this.textBox_Huruf.Name = "textBox_Huruf";
             this.textBox_Huruf.Size = new System.Drawing.Size(90, 31);
             this.textBox_Huruf.TabIndex = 4;
-            this.textBox_Huruf.TextChanged += new System.EventHandler(this.textBox_Huruf_TextChanged);
             // 
             // textBox_Menjadi
             // 
@@ -88,7 +87,6 @@
             this.textBox_Menjadi.Name = "textBox_Menjadi";
             this.textBox_Menjadi.Size = new System.Drawing.Size(90, 31);
             this.textBox_Menjadi.TabIndex = 5;
-            this.textBox_Menjadi.TextChanged += new System.EventHandler(this.textBox_Menjadi_TextChanged);
             // 
             // button_Konversi
             // 
@@ -116,7 +114,6 @@
             this.label_Hasil.Name = "label_Hasil";
             this.label_Hasil.Size = new System.Drawing.Size(0, 25);
             this.label_Hasil.TabIndex = 8;
-            this.label_Hasil.Click += new System.EventHandler(this.label_Hasil_Click);
             // 
             // Form1
             // 
